@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script>
+  <link rel="stylesheet" href="./icon.css" />
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="./iconimg.css" />
+  <body>
+    <div id="box">
+      <div id="head">
+        <p id="biao">小睡眠</p>
+        <div id="tu">
+          <i id="da" class="iconfont icon-huoyan"></i>
+        </div>
+        <p>红泥小炉</p>
+        <div id="bo">
+          <i id="play" class="iconfont icon-bofang"></i>
+          <audio id="mp3" autoplay>
+            <source src="./4202.mp3" />
+          </audio>
+        </div>
+        <div id="time">
+          <ul></ul>
+        </div>
+      </div>
+
+      <div id="nav">
+        <ul id="list">
+          <li>全部</li>
+          <li>暴雨</li>
+          <li>江湖</li>
+          <li>课堂</li>
+          <li>自然</li>
+          <li>ASMR</li>
+          <li>动物</li>
+          <li>旋律</li>
+          <li>脑波</li>
+          <li>生活</li>
+          <li>城市</li>
+          <li>宝宝</li>
+        </ul>
+      </div>
+
+      <div id="iconimg">
+        <ul>
+          <!-- <li>
+            <i class="iconfont icon-huoyan"></i>
+            <p>红泥小炉</p>
+          </li>
+          <li>
+            <i class="iconfont icon-beike-xiantiao"></i>
+            <p>浪卷海贝</p>
+          </li>
+          <li>
+            <i class="iconfont icon-shuimianguanli"></i>
+            <p>夜虫唧唧</p>
+          </li>
+          <li>
+            <i class="iconfont icon-dianpu"></i>
+            <p>小卖部</p>
+          </li>
+          <li>
+            <i class="iconfont icon-ji"></i>
+            <p>凌雪藏锋</p>
+          </li>
+          <li>
+            <i class="iconfont icon-ji"></i>
+            <p>凌雪密洞</p>
+          </li>
+          <li>
+            <i class="iconfont icon-ji"></i>
+            <p>凌雪隐侠</p>
+          </li>
+          <li>
+            <i class="iconfont icon-huaxue"></i>
+            <p>化学课堂</p>
+          </li>
+          <li>
+            <i class="iconfont icon-miantiao"></i>
+            <p>一碗面条</p>
+          </li>
+          <li>
+            <i class="iconfont icon-shupian_"></i>
+            <p>一包薯片</p>
+          </li>
+          <li>
+            <i class="iconfont icon-pingguo"></i>
+            <p>一颗苹果</p>
+          </li>
+          <li>
+            <i class="iconfont icon-bingshui"></i>
+            <p>一杯冰水</p>
+          </li> -->
+        </ul>
+      </div>
+      <div id="footer">
+        <ul>
+          <li>
+            <i class="iconfont icon-icon-test"></i>
+            <p>声音</p>
+          </li>
+          <li>
+            <i class="iconfont icon-shuimian"></i>
+            <p>助眠</p>
+          </li>
+          <li>
+            <i class="iconfont icon-yuanhuan"></i>
+            <p>呼吸</p>
+          </li>
+          <li>
+            <i class="iconfont icon-jingxuanshichang"></i>
+            <p>精选</p>
+          </li>
+          <li>
+            <i class="iconfont icon-wode"></i>
+            <p>我的</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      let arr = [
+        {
+          name: "红泥小炉",
+          src: "./4202.mp3",
+          icon: "iconfont icon-huoyan",
+        },
+        {
+          name: "浪卷海贝",
+          src: "./4964.mp3",
+          icon: "iconfont icon-beike-xiantiao",
+        },
+        {
+          name: "夜虫唧唧",
+          src: "./5624.mp3",
+          icon: "iconfont icon-shuimianguanli",
+        },
+        {
+          name: "小卖部",
+          src: "./6153.mp3",
+          icon: "iconfont icon-ji",
+        },
+        {
+          name: "化学课堂",
+          src: "./y2315.mp3",
+          icon: "iconfont icon-huaxue",
+        },
+        {
+          name: "一碗面条",
+          src: "./y2321.mp3",
+          icon: "iconfont icon-miantiao",
+        },
+        {
+          name: "一包薯片",
+          src: "./y2321.mp3",
+          icon: "iconfont icon-miantiao",
+        },
+        {
+          name: "一颗苹果",
+          src: "./y2321.mp3",
+          icon: "iconfont icon-pingguo",
+        },
+      ];
+      let time = [
+        {
+          time: "5",
+          miao: "5000",
+        },
+        {
+          time: "10",
+          miao: "10000",
+        },
+        {
+          time: "15",
+          miao: "15000",
+        },
+        {
+          time: "30",
+          miao: "30000",
+        },
+        {
+          time: "60",
+          miao: "60000",
+        },
+        {
+          time: "∞",
+        },
+      ];
+      $(function () {
+        renderFun();
+        timeFun();
+        $("#play").click(playFun);
+        $("#iconimg ul li").click(playsrcFun);
+        $("#time ul li button").click(timeoutFun);
+      });
+      let currentIndex;
+      function timeoutFun() {
+        currentIndex = $(this).data("index");
+        console.log(currentIndex);
+        let playtime = time[currentIndex].miao;
+        console.log(playtime);
+        setTimeout(function () {
+          $("#play").trigger("click");
+        }, playtime);
+        alert(playtime + "ms后停止");
+      }
+      function timeFun() {
+        let html = ``;
+        time.forEach((item, index) => {
+          html += `<li>
+              <button data-index='${index}'></button>
+              <p>${item.time}</p>
+            </li>`;
+        });
+        $("#time ul").html(html);
+      }
+      function playsrcFun() {
+        currentIndex = $(this).data("index");
+        console.log(currentIndex);
+        $("#mp3")[0].src = arr[currentIndex].src;
+        var icon = arr[currentIndex].icon;
+        $("#mp3")[0].play();
+        $("#play").removeClass("icon-bofang");
+        $("#play").addClass("icon-bofangzhong");
+        $("#tu").html(`<i class="${icon}"></i>`);
+        $("#tu i").css("font-size", "12vh");
+      }
+      function renderFun() {
+        let html = ``;
+        arr.forEach((item, index) => {
+          html += `
+          <li data-index='${index}'>
+            <i data-index='${index}' class="${item.icon}"></i>
+            <p data-index='${index}'>${item.name}</p>
+          </li>
+          `;
+        });
+        $("#iconimg ul").html(html);
+      }
+      function playFun() {
+        if ($("#play").hasClass("iconfont icon-bofangzhong")) {
+          $("#mp3")[0].pause();
+        } else {
+          $("#mp3")[0].play();
+        }
+        $(this).toggleClass("iconfont icon-bofang iconfont icon-bofangzhong");
+      }
+    </script>
+  </body>
+</html>

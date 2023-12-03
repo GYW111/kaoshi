@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#box {
+  width: 100%;
+  height: 150vh;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+#box #head {
+  width: 100%;
+  height: 50vh;
+  background-color: rgb(253, 123, 92);
+  text-align: center;
+  border-bottom: 1px solid red;
+}
+#box #head #biao {
+  width: 100%;
+  height: 10vh;
+  color: #fff;
+  font-size: 3vh;
+  line-height: 10vh;
+}
+#box #head div {
+  width: 100%;
+  height: 13vh;
+  text-align: center;
+}
+#box #head div #da {
+  font-size: 12vh;
+  color: #fff;
+}
+#box #head p {
+  width: 100%;
+  height: 8vh;
+  font-size: 4vh;
+  color: #fff;
+  line-height: 8vh;
+}
+#box #head #bo {
+  width: 100%;
+  height: 7vh;
+  text-align: center;
+}
+#box #head #bo i {
+  color: #ccc;
+}
+#box #head #time {
+  width: 100%;
+  height: 5vh;
+  text-align: left;
+}
+#box #head #time svg {
+  width: 2vh;
+  margin-right: 80vw;
+}
+#box #head #time button {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  border: 0;
+  background-color: #ccc;
+}
+#box #head #time p {
+  width: 15px;
+  height: 15px;
+  font-size: 5px;
+  line-height: 3vh;
+}
+#box #head #time ul li {
+  list-style: none;
+  float: left;
+  margin-left: 11vw;
+}
+#box #nav {
+  width: 100%;
+  height: 8vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  line-height: 5vh;
+}
+#box #nav #list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#box #nav li {
+  display: inline-block;
+  list-style: none;
+  margin: 11.8px;
+  color: #ccc;
+}
+#box #iconimg {
+  width: 100%;
+}
+#box #iconimg ul li {
+  width: 20%;
+  height: 15vh;
+  float: left;
+  list-style: none;
+  margin: 1vh;
+  margin-left: 10px;
+  text-align: center;
+}
+#box #iconimg ul li p {
+  margin-top: 2vh;
+}
+#box #footer {
+  width: 100%;
+  height: 10vh;
+  border: 1px solid #ccc;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+}
+#box #footer li {
+  float: left;
+  list-style: none;
+  width: 20%;
+  height: 10vh;
+  text-align: center;
+  margin-top: 1vh;
+}
+#box #footer li p {
+  margin-top: 1vh;
+}
+
+/*# sourceMappingURL=index.css.map */
